@@ -16,8 +16,8 @@ namespace Original_Clock_5
 {
     public partial class Form1 : Form
     {
-        int endTime;
-        int nowTime;
+        
+        
         int MouseX;
         int MouseY;
 
@@ -31,6 +31,7 @@ namespace Original_Clock_5
 
         private void Form1_Load(object sender, EventArgs e)
         {
+        //ネットの画像をアプリ内で表示
             pictureBox13.ImageLocation = "https://umaidango.github.io/net.png";
 
             
@@ -68,13 +69,13 @@ namespace Original_Clock_5
 
 
 
-
+//拡大するやつ（？）が無効になる。
             this.MaximizeBox = false;
             
             this.Text = Application.ProductName;
             timer1.Interval = 1000;
             timer1.Enabled = true;
-
+//名前、文字
             tabPage1.Text = "時計";
             tabPage2.Text = "背景";
             tabPage3.Text = "設定";
@@ -146,7 +147,7 @@ namespace Original_Clock_5
         {
            
 
-
+//文字の大きさの変更機能
             tabPage1.Font = new Font(label1.Font.FontFamily, 12);
             tabPage2.Font = new Font(label1.Font.FontFamily, 12);
             tabPage3.Font = new Font(label1.Font.FontFamily, 12);
@@ -205,7 +206,7 @@ namespace Original_Clock_5
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+//文字の大きさ変更機能
             tabPage1.Font = new Font(label1.Font.FontFamily, 9);
             tabPage2.Font = new Font(label1.Font.FontFamily, 9);
             tabPage3.Font = new Font(label1.Font.FontFamily, 9);
@@ -379,7 +380,7 @@ namespace Original_Clock_5
         }
 
         private void button7_Click(object sender, EventArgs e)
-        {
+        {//準備中の表記
             MessageBox.Show("画像追加予定です。",
                 "工事中",
                 MessageBoxButtons.OK,
@@ -387,7 +388,7 @@ namespace Original_Clock_5
         }
 
         private void button8_Click(object sender, EventArgs e)
-        {
+        {//準備中の表記
             MessageBox.Show("画像追加予定です。",
                 "工事中",
                 MessageBoxButtons.OK,
@@ -403,7 +404,7 @@ namespace Original_Clock_5
         }
 
         private void button10_Click(object sender, EventArgs e)
-        {
+        {//準備中の表記
             MessageBox.Show("画像追加予定です。",
                 "工事中",
                 MessageBoxButtons.OK,
@@ -416,7 +417,7 @@ namespace Original_Clock_5
         }
 
         private void button12_Click(object sender, EventArgs e)
-        {
+        {//準備中の表記
             MessageBox.Show("画像追加予定です。",
                 "工事中",
                 MessageBoxButtons.OK,
@@ -426,7 +427,7 @@ namespace Original_Clock_5
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             
-
+//タブデカくなるやつよ。
             tabControl1.SizeMode = TabSizeMode.Fixed;
             tabControl1.ItemSize = new Size(73, 25);
             tabControl1.Size = new Size(502, 267);
@@ -440,6 +441,7 @@ namespace Original_Clock_5
 
         private void button16_Click(object sender, EventArgs e)
         {
+        //色変えれるよ！！
             label1.ForeColor = Color.Green;
         }
 
@@ -491,6 +493,7 @@ namespace Original_Clock_5
 
         private void button17_Click_1(object sender, EventArgs e)
         {
+        //カラーダイアログだったような、、、
             //FontDialogクラスのインスタンスを作成
             FontDialog fd = new FontDialog();
 
@@ -536,6 +539,7 @@ namespace Original_Clock_5
         {
 
             //ダイアログを表示する
+            //ナニコレ？↑
 
 
         }
@@ -550,52 +554,6 @@ namespace Original_Clock_5
 
         }
 
-        private void button19_Click_1(object sender, EventArgs e)
-        {
-            if (!int.TryParse(textSetTime.Text, out endTime))
-            {
-                endTime = 1;
-
-            }
-
-            nowTime = 0;
-
-            timer2.Start();
-
-
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            int remainingTime;
-            nowTime++;
-
-            remainingTime = endTime - nowTime;
-            TextremainingTime.Text = remainingTime.ToString();
-
-            if (endTime == nowTime)
-            {
-                timer2.Stop();
-
-
-                MessageBox.Show("時間になりました！！！");
-
-
-
-
-
-
-
-            }
-
-
-            else
-            {
-
-            }
-
-
-        }
 
         private void webView21_Click(object sender, EventArgs e)
         {
@@ -609,7 +567,7 @@ namespace Original_Clock_5
 
         private void button20_Click(object sender, EventArgs e)
         {
-            //using System.Windows.Forms;
+            //バージョン表記よ！"i"が出てくるようになってるよ！！
 
             //メッセージボックスを表示する
             MessageBox.Show("Original Clock Ver.5.06",
@@ -631,6 +589,7 @@ namespace Original_Clock_5
 
         private void button21_Click(object sender, EventArgs e)
         {
+        //設定をもとに戻せるよ！！
             tabPage1.BackgroundImage = null;
             label1.ForeColor = Color.Black;
             this.TopMost = false;
@@ -663,7 +622,7 @@ namespace Original_Clock_5
         }
 
         private void hureru_MouseMove(object sender, MouseEventArgs e)
-        {
+        {//画像変えれるよ！！
             this.pictureBox9.Image = global::Original_Clock_5.Properties.Resources.close_2;
 
 
@@ -675,7 +634,7 @@ namespace Original_Clock_5
         }
 
         private void pictureBox9_Click_1(object sender, EventArgs e)
-        {
+        {//閉じるボタン
             this.Close();
         }
 
